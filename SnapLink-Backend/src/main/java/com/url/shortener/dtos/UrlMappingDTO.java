@@ -1,23 +1,17 @@
-package com.url.shortener.models;
+package com.url.shortener.dtos;
 
-import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Entity
 @Data
-public class UrlMapping {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UrlMappingDTO {
     private Long id;
     private String originalUrl;
     private String shortUrl;
-    private int clickCount = 0;
+    private int clickCount;
     private LocalDateTime createdDate;
+    private String username;
 
     public Long getId() {
         return id;
@@ -59,26 +53,11 @@ public class UrlMapping {
         this.createdDate = createdDate;
     }
 
-    public User getUser() {
-        return user;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUsername(String username) {
+        this.username = username;
     }
-
-    public List<ClickEvent> getClickEvents() {
-        return clickEvents;
-    }
-
-    public void setClickEvents(List<ClickEvent> clickEvents) {
-        this.clickEvents = clickEvents;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
-
-    @OneToMany(mappedBy = "urlMapping")
-    private List<ClickEvent> clickEvents;
 }
