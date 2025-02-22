@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="lg:px-14 sm:px-8 px-4 w-full flex justify-between">
         <Link to="/">
           <h1 className="font-bold text-3xl text-white italic sm:mt-0 mt-2">
-          SnapLink
+            Linklytics
           </h1>
         </Link>
         <ul
@@ -45,7 +45,7 @@ const Navbar = () => {
               About
             </Link>
           </li>
-            <Link to="">
+            <Link to="/register">
               <li className=" sm:ml-0 -ml-1 bg-rose-700 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-2 rounded-md  hover:text-slate-300   transition-all duration-150">
                 SignUp
               </li>
