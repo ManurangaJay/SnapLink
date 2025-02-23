@@ -3,20 +3,17 @@ import React from "react";
 import { motion } from "framer-motion";
 
 import Card from "./Card";
-import { useStoreContext } from "../ContextApi";
+import { useStoreContext } from "../contextApi/ContextApi";
 
 let desc =
   "Generate short, memorable links with ease using SnapLink's intuitive interface. Share URLs effortlessly across platforms. Optimize your sharing strategy with SnapLink. Track clicks and manage your links seamlessly to enhance your online presence. Generate short, memorable links with ease using SnapLink's intuitive interface. Share URLs effortlessly across platforms.";
 
 const LandingPage = () => {
   const navigate = useNavigate();
-  const {token} = useStoreContext();
-  console.log("TOKEN FROM LANDING PAGE: "+token)
-  
+  const { token } = useStoreContext();
+  console.log("TOKEN FROM LANDING PAGE: " + token);
 
-  const dashBoardNavigateHandler = () => {
-
-  };
+  const dashBoardNavigateHandler = () => {};
   return (
     <div className="min-h-[calc(100vh-64px)]  lg:px-14 sm:px-8 px-4">
       <div className="lg:flex-row flex-col    lg:py-5   pt-16   lg:gap-10 gap-8 flex justify-between items-center">
